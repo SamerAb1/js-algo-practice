@@ -15,6 +15,15 @@ Multiple solutions can exist, any solution is sufficient to return true.
 
 function canPartition( /*args*/ ) {
   //your code
+    const total = array.reduce((prod,val) => prod*val, 1);
+    let zeroCount = array.filter(x => x === 0).length;
+    if(zeroCount === 1) return false;
+    if(zeroCount > 1) return true;
+
+    for(let i = 0; i < array.length; i++){
+      if(array[i] === (total/array[i])) return true;
+    }
+    return false;
 }
 
 exports.solution = canPartition;

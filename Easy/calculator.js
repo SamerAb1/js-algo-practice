@@ -13,6 +13,14 @@ If the input tries to divide by 0, return: "Can't divide by 0!"
 
 function calculator( /*args*/ ) {
   //your code
+  if(operator === '/' && num2 === 0) return "Can't divide by 0!";
+  let op = {
+    '+' : (a,b) => a + b,
+    '-' : (a,b) => a - b,
+    '*' : (a,b) => a * b,
+    '/' : (a,b) => a / b
+  }
+  return op[operator] ? op[operator](num1, num2) : "Unknown Operator!";
 }
 
 exports.solution = calculator;

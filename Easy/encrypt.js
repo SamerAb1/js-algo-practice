@@ -32,6 +32,31 @@ All inputs are strings, no uppercases and all output must be strings.
 
 function encrypt( /*args*/ ) {
   //your code
+    let vowel = {
+    'a' : '0',
+    'e' : '1',
+    'i' : '2',
+    'o' : '2',
+    'u' : '3'
+  }
+  let arr = input.split('');
+  arr.reverse();
+  for(i in arr){
+    if(arr[i] in vowel) arr[i] = vowel[arr[i]];
+  }
+  let newStr = arr.join('');
+  return newStr + 'aca';
+
 }
+
+
+// function encrypt(input) {
+//   const vowel = { a:'0', e:'1', i:'2', o:'2', u:'3' };
+//   return input
+//     .split('')
+//     .reverse()
+//     .map(ch => vowel[ch] ?? ch)
+//     .join('') + 'aca';
+// }
 
 exports.solution = encrypt;

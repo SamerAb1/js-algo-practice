@@ -14,7 +14,7 @@ If you're really stuck, unlock solutions in the Solutions tab.
 */
 
 function convert(/*args*/) {
-  //your code
+  return (hours*3600) + (minutes * 60);
 }
 
 exports.solution = convert;
